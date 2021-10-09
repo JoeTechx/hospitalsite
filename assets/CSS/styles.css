@@ -1,0 +1,474 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --dark-one: #333;
+  --dark-two: #7a7a7a;
+  --main-color: #784cfb;
+  --light-one: #fff;
+  --light-two: #f9fafb;
+  --light-three: #f6f7fb;
+}
+
+/* General Stlyes*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+button,
+input,
+textarea {
+  font-family: "poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+.container {
+  position: relative;
+  z-index: 5;
+  max-width: 92rem;
+  padding: 0 13rem;
+  margin: 0 auto;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  font-size: 1.25rem;
+  line-height: 1.6rem;
+  padding-top: 10px;
+  color: var(--dark-two);
+}
+.columm-1 {
+  margin-right: 2.5rem;
+}
+.column-2 {
+  margin-left: 2.5rem;
+}
+.image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.z-index {
+  position: relative;
+  z-index: 2;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.overlay .shape {
+  width: initial;
+  opacity: 0.13;
+  position: absolute;
+}
+.overlay.overlay-lg .shape {
+  height: 55px;
+}
+.overlay.overlay-lg .shape.vector {
+  height: initial;
+  width: 88px;
+}
+.overlay.overlay-lg .shape.star {
+  height: 38px;
+}
+.overlay.overlay-lg .shape.rectangle {
+  height: 43px;
+}
+.overlay.overlay-lg .shape.ellipse {
+  height: 40px;
+}
+.overlay.overlay-lg .shape.polygon {
+  height: 38px;
+}
+.points {
+  opacity: 0.21;
+  position: absolute;
+}
+.section {
+  padding: 7rem 0;
+}
+.section-header {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+  line-height: 1;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+.title::before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--main-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: var(--main-color);
+  bottom: 0;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.title-sm {
+  color: var(--dark-one);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.points-sq {
+  width: 210px;
+}
+.btn.small {
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background-color: var(--main-color);
+  color: var(--light-one);
+  border-radius: 2rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #6b44e0;
+}
+
+/* End General Stlyes */
+
+/* Header Stlyes*/
+
+header {
+  width: 100%;
+  background-color: var(--light-three);
+  overflow: hidden;
+  position: relative;
+}
+nav {
+  width: 100%;
+  position: relative;
+  z-index: 50;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  height: 6rem;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+  display: flex;
+  align-items: center;
+}
+.links ul {
+  display: flex;
+}
+.links a {
+  display: inline-block;
+  padding: 0.9rem 1.2rem;
+  color: var(--dark-one);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  transition: 0.3s;
+}
+.links a.active {
+  background-color: var(--main-color);
+  color: var(--light-one);
+  border-radius: 2rem;
+  font-size: 1rem;
+  padding: 0.9rem 2.1rem;
+  margin-left: 1rem;
+}
+.links a:hover {
+  color: var(--main-color);
+}
+.links a.active:hover {
+  color: var(--light-one);
+  background-color: #6b44e0;
+}
+.header-content .container.grid-2 {
+  grid-template-columns: 2.5fr 3.5fr;
+  min-height: calc(100vh - 6rem);
+  padding-bottom: 2.5rem;
+  text-align: left;
+}
+
+.header-title {
+  font-size: 2.8rem;
+  line-height: 0.8rem;
+  color: var(--dark-one);
+}
+.header-content .text {
+  margin: 2.15rem 0;
+}
+
+.header-content .image .img-element {
+  max-width: 750px;
+  height: 795px;
+  width: 30rem;
+}
+
+header .points1 {
+  width: 420px;
+  bottom: -75px;
+  left: -150px;
+}
+header .points2 {
+  width: 90%;
+  top: 70%;
+  left: 79%;
+}
+header .points3 {
+  width: 90%;
+  bottom: 80%;
+  left: 79%;
+}
+header .rectangle {
+  right: 68%;
+  top: 71%;
+}
+header .polygon {
+  right: 7%;
+  bottom: 75%;
+}
+header .star {
+  right: 4%;
+  bottom: 50%;
+}
+header .half-ellipse2 {
+  left: 50%;
+  bottom: 82%;
+}
+header .half-ellipse3 {
+  left: 5%;
+  top: 67%;
+}
+header .vector1 {
+  bottom: 75%;
+  left: 20%;
+}
+header .vector2 {
+  bottom: 8%;
+  right: 55%;
+}
+header .ellipse1 {
+  left: 38%;
+  bottom: 63%;
+}
+.letters {
+  position: absolute;
+  width: 11.5%;
+  top: -5px;
+  left: 15px;
+  opacity: 0.06;
+}
+
+/* End Header Stlyes */
+
+/*Services Stlyes */
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.card-wrap {
+  margin: 1.7rem 0.8rem;
+  position: relative;
+}
+.card {
+  position: relative;
+  max-width: 320px;
+  min-height: 420px;
+  background-color: var(--light-three);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+.card::before {
+  content: attr(data-card);
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--main-color);
+  opacity: 0.025;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+.card-wrap:hover .card {
+  transform: translateY(-15px);
+  cursor: pointer;
+}
+.card-wrap:hover .card::after {
+  height: 8px;
+}
+.icon {
+  width: 92px;
+  margin: 1.7rem;
+}
+.card .title-sm {
+  line-height: 0.8;
+}
+.card .text {
+  font-size: 1.15rem;
+  margin: 1.8rem 0;
+}
+
+.services .points1 {
+  bottom: -50px;
+  left: -125px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+.services .points2 {
+  bottom: -70px;
+  right: -65px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* End Services Stlyes */
+
+/* Portfolio Stlyes */
+
+.portfolio {
+  position: relative;
+  width: 100%;
+  background-color: var(--light-two);
+  min-height: 1200px;
+}
+.background-bg {
+  position: absolute;
+  width: 100%;
+  height: 520px;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+}
+.portfolio .title,
+.portfolio .title::before {
+  color: var(--light-one);
+}
+.portfolio .title::after {
+  background-color: var(--light-one);
+}
+.filter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0.45rem 0.4rem;
+  padding: 0.85rem 1.8rem;
+  color: var(--light-one);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+.filter-btn.active {
+  background-color: var(--light-one);
+  color: var(--main-color);
+}
+.overlay.overlay-sm .shape {
+  filter: brightness(0) invert(1);
+  opacity: 0.15;
+  height: 45px;
+}
+.overlay.overlay-sm .shape.shape.vector {
+  height: initial;
+  width: 70px;
+}
+.overlay.overlay-sm .shape.star {
+  height: 30px;
+}
+.portfolio .rectangle {
+  top: 28%;
+  left: 20%;
+}
+.portfolio .ellipse {
+  top: 8%;
+  right: 35%;
+}
+.portfolio .polygon {
+  bottom: 10%;
+  right: 4%;
+}
+.portfolio .half-ellipse1 {
+  bottom: 13%;
+  left: 5%;
+}
+.portfolio .half-ellipse2 {
+  top: 35%;
+  right: 20%;
+}
+.portfolio .star {
+  top: 10%;
+  left: 8%;
+}
+.portfolio .vector {
+  top: 38%;
+  left: 6%;
+}
+
+/* End Portfolio Stlyes */
